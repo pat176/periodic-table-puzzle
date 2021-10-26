@@ -2,16 +2,7 @@ import React, { useState } from "react";
 import data from "./PeriodicTableJSON.json";
 import "./PeriodicTable.css";
 
-const colorMap = {
-  "noble gas": "#FFBC42",
-  "alkaline earth metal": "#EC674E",
-  "diatomic nonmetal": "#D81159",
-  "alkali metal": "#8F2D56",
-  "transition metal": "#58586B",
-  "post-transition metal": "#218380",
-  lanthanide: "#4AABAF",
-  metalloid: "#73D2DE",
-};
+
 function shuffle(array) {
   var tmp = array
   tmp.map((el, ind) => {
@@ -21,6 +12,7 @@ function shuffle(array) {
     tmp[tmpN][0] = tmpEl[0]
     tmp[ind][1] = tmp[tmpN][1]
     tmp[tmpN][1] = tmpEl[1]
+    return ""
   })
   return tmp
 }
@@ -28,6 +20,7 @@ var els = []
 data.elements.map(element => {
   // console.log(element)
   els.push([element.name, element.symbol, element.xpos, element.ypos])
+  return ""
 })
 els = shuffle(els)
 const PeriodicTable = (props) => {

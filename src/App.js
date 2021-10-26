@@ -5,21 +5,13 @@ import data from "./PermanentData.json"
 // import Video from "./Video";
 
 function App() {
-  const [state, setstate] = useState((()=>{
+  const [state] = useState((()=>{
     let tmp = []
     data.elements.map(element => {
       // console.log(element)
       tmp.push([element.name, element.symbol, element.xpos, element.ypos])
       // console.log(tmp)
-    })
-    return tmp
-  })())
-  const [tmp, settmp] = useState((() => {
-    let tmp = []
-    data.elements.map(element => {
-      // console.log(element)
-      tmp.push([element.name, element.symbol, element.xpos, element.ypos])
-      // console.log(tmp)
+      return ""
     })
     return tmp
   })())
